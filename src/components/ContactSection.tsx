@@ -99,7 +99,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
                     </span>
                     <a
                       href={`mailto:${PERSONAL_INFO.contact.email}`}
-                      className="text-base font-bold text-white hover:text-[#67E8F9] transition-colors block"
+                      className="text-base font-bold text-white hover:text-[#67E8F9] transition-colors block break-all"
                     >
                       {PERSONAL_INFO.contact.email}
                     </a>
@@ -108,7 +108,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
 
                 <button
                   onClick={() => handleCopy(PERSONAL_INFO.contact.email, 'email')}
-                  className="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                  className="p-2.5 min-w-[40px] min-h-[40px] rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer flex items-center justify-center shrink-0"
                   title="Copy email to clipboard"
                 >
                   {copiedType === 'email' ? (
@@ -133,17 +133,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
             {/* Phone Card */}
             <div className="glass-panel glass-panel-hover rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
               <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-[#67E8F9]">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-[#67E8F9] shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
                       Telephone / WhatsApp
                     </span>
                     <a
                       href={`tel:${PERSONAL_INFO.contact.phone}`}
-                      className="text-base font-bold text-white hover:text-[#67E8F9] transition-colors block font-mono"
+                      className="text-base font-bold text-white hover:text-[#67E8F9] transition-colors block font-mono break-all"
                     >
                       {PERSONAL_INFO.contact.phone}
                     </a>
@@ -152,7 +152,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
 
                 <button
                   onClick={() => handleCopy(PERSONAL_INFO.contact.phone, 'phone')}
-                  className="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                  className="p-2.5 min-w-[40px] min-h-[40px] rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer flex items-center justify-center shrink-0"
                   title="Copy phone to clipboard"
                 >
                   {copiedType === 'phone' ? (
@@ -233,7 +233,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
                       placeholder="e.g. Sarah Jenkins"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
+                      className="w-full min-h-[44px] bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
                     />
                     {formErrors.name && (
                       <p className="text-xs text-rose-400 mt-1">{formErrors.name}</p>
@@ -249,7 +249,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
                       placeholder="sarah@organization.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
+                      className="w-full min-h-[44px] bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
                     />
                     {formErrors.email && (
                       <p className="text-xs text-rose-400 mt-1">{formErrors.email}</p>
@@ -266,7 +266,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
                     placeholder="e.g. Data Analytics Role / Quantitative Research Mentorship"
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
+                    className="w-full min-h-[44px] bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
                   />
                 </div>
 
@@ -279,7 +279,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
                     placeholder="Introduce yourself or share details about your team, vacancy, or research inquiry..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
+                    className="w-full min-h-[110px] bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#4F9CF9] focus:ring-1 focus:ring-[#4F9CF9] transition-all"
                   />
                   {formErrors.message && (
                     <p className="text-xs text-rose-400 mt-1">{formErrors.message}</p>
@@ -293,7 +293,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCV }) => {
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#4F9CF9] hover:bg-[#38BDF8] text-slate-950 font-bold text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(79,156,249,0.3)] cursor-pointer"
+                    className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#4F9CF9] hover:bg-[#38BDF8] text-slate-950 font-bold text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(79,156,249,0.3)] cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send via Email Client</span>

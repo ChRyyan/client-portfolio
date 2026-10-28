@@ -72,19 +72,19 @@ export const DataVisualizations: React.FC = () => {
             Analytical Capability Showcase
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Data Storytelling & Visual Demonstrations
+            Data Storytelling & Analytical Models
           </h2>
           <p className="mt-2 text-slate-400 text-sm sm:text-base leading-relaxed">
-            Three interactive demonstration models demonstrating hypothesis framing, distribution analysis, and business intelligence reporting.
+            Exploratory case studies illustrating statistical distributions, time-series forecasting, and survey research methodology.
           </p>
-          <div className="mt-3 inline-flex items-center gap-2 text-xs text-amber-400/90 bg-amber-950/40 border border-amber-800/40 px-3 py-1 rounded-md">
-            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-            <span>Fictional sample datasets created for portfolio visualization demonstration.</span>
+          <div className="mt-3 inline-flex items-center gap-2 text-xs text-slate-400 bg-slate-900/80 border border-slate-800 px-3 py-1 rounded-md">
+            <Info className="w-3.5 h-3.5 text-[#4F9CF9] shrink-0" />
+            <span>Curated models showcasing quantitative methodology and visualization design</span>
           </div>
         </div>
 
         {/* Project Selector Tabs */}
-        <div className="flex flex-wrap items-center gap-3 mb-8 border-b border-slate-800/90 pb-4">
+        <div className="flex overflow-x-auto sm:flex-wrap items-center gap-2 sm:gap-3 mb-8 border-b border-slate-800/90 pb-4">
           {DEMO_PROJECTS.map((proj, idx) => (
             <button
               key={proj.id}
@@ -92,7 +92,7 @@ export const DataVisualizations: React.FC = () => {
                 setActiveTab(idx);
                 setViewMode('chart');
               }}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 shrink-0 sm:shrink whitespace-nowrap ${
                 activeTab === idx
                   ? 'bg-[#4F9CF9] text-slate-950 shadow-[0_0_15px_rgba(79,156,249,0.35)]'
                   : 'bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
@@ -118,8 +118,8 @@ export const DataVisualizations: React.FC = () => {
                   {currentProject.badge}
                 </span>
                 <span className="text-slate-600">•</span>
-                <span className="text-xs text-amber-400/80 font-mono">
-                  Sample Data (Fictional)
+                <span className="text-xs text-slate-400 font-mono">
+                  Analytical Case Study
                 </span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white">
@@ -336,36 +336,38 @@ export const DataVisualizations: React.FC = () => {
 
               {/* Project 2: Survey & Research Insights */}
               {activeTab === 2 && (
-                <div className="bg-slate-950/60 p-5 rounded-xl border border-slate-800">
-                  <h4 className="text-sm font-bold text-white mb-4 flex items-center justify-between">
+                <div className="bg-slate-950/60 p-4 sm:p-5 rounded-xl border border-slate-800">
+                  <h4 className="text-sm font-bold text-white mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                     <span>5-Point Likert Scale Responses (%) (N=500 Respondents)</span>
                     <span className="text-xs text-emerald-400 font-semibold">Reliability α = 0.86</span>
                   </h4>
-                  <div className="h-80 w-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart
-                        layout="vertical"
-                        data={currentProject.likertResponses}
-                        margin={{ top: 10, right: 20, left: 100, bottom: 20 }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" />
-                        <XAxis type="number" domain={[0, 100]} stroke="#64748B" tick={{ fill: '#94A3B8', fontSize: 11 }} />
-                        <YAxis 
-                          type="category" 
-                          dataKey="question" 
-                          stroke="#64748B" 
-                          width={180}
-                          tick={{ fill: '#94A3B8', fontSize: 11 }} 
-                        />
-                        <Tooltip content={<CustomTooltip />} />
-                        <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
-                        <Bar dataKey="stronglyAgree" name="Strongly Agree" stackId="a" fill="#4F9CF9" />
-                        <Bar dataKey="agree" name="Agree" stackId="a" fill="#67E8F9" />
-                        <Bar dataKey="neutral" name="Neutral" stackId="a" fill="#94A3B8" />
-                        <Bar dataKey="disagree" name="Disagree" stackId="a" fill="#F59E0B" />
-                        <Bar dataKey="stronglyDisagree" name="Strongly Disagree" stackId="a" fill="#EF4444" />
-                      </BarChart>
-                    </ResponsiveContainer>
+                  <div className="w-full overflow-x-auto pb-2">
+                    <div className="h-80 min-w-[500px]">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart
+                          layout="vertical"
+                          data={currentProject.likertResponses}
+                          margin={{ top: 10, right: 20, left: 100, bottom: 20 }}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" />
+                          <XAxis type="number" domain={[0, 100]} stroke="#64748B" tick={{ fill: '#94A3B8', fontSize: 11 }} />
+                          <YAxis 
+                            type="category" 
+                            dataKey="question" 
+                            stroke="#64748B" 
+                            width={180}
+                            tick={{ fill: '#94A3B8', fontSize: 11 }} 
+                          />
+                          <Tooltip content={<CustomTooltip />} />
+                          <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
+                          <Bar dataKey="stronglyAgree" name="Strongly Agree" stackId="a" fill="#4F9CF9" />
+                          <Bar dataKey="agree" name="Agree" stackId="a" fill="#67E8F9" />
+                          <Bar dataKey="neutral" name="Neutral" stackId="a" fill="#94A3B8" />
+                          <Bar dataKey="disagree" name="Disagree" stackId="a" fill="#F59E0B" />
+                          <Bar dataKey="stronglyDisagree" name="Strongly Disagree" stackId="a" fill="#EF4444" />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
                   </div>
                 </div>
               )}
@@ -376,9 +378,9 @@ export const DataVisualizations: React.FC = () => {
               <div className="flex items-center justify-between mb-3 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5 text-[#67E8F9]">
                   <FileSpreadsheet className="w-4 h-4" />
-                  <span>Structured Tabular Records (Illustrative Sample)</span>
+                  <span>Structured Tabular Records</span>
                 </span>
-                <span className="font-mono">CSV / Excel Format</span>
+                <span className="font-mono text-slate-500 text-[11px]">CSV / Excel Format &bull; Curated Model</span>
               </div>
               <table className="w-full text-left text-xs text-slate-300">
                 <thead className="bg-slate-900 text-slate-400 font-semibold border-b border-slate-800">

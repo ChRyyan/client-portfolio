@@ -50,18 +50,18 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
       {/* Modal Container */}
       <div className="relative w-full max-w-5xl h-[92vh] bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
         {/* Header Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/80">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#4F9CF9]/10 border border-[#4F9CF9]/30 flex items-center justify-center text-[#67E8F9]">
-              <FileCheck2 className="w-5 h-5" />
+        <div className="flex items-center justify-between px-3.5 sm:px-6 py-3 sm:py-4 border-b border-slate-800 bg-slate-950/80">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#4F9CF9]/10 border border-[#4F9CF9]/30 flex items-center justify-center text-[#67E8F9] shrink-0">
+              <FileCheck2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <h3 className="text-base sm:text-lg font-bold text-white">
-                  Verified Curriculum Vitae
+                <h3 className="text-sm sm:text-lg font-bold text-white truncate">
+                  Curriculum Vitae
                 </h3>
-                <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-2 py-0.5 rounded-full">
-                  <ShieldCheck className="w-3 h-3" /> Official Document
+                <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-semibold text-[#67E8F9] bg-slate-800 border border-slate-700 px-2 py-0.5 rounded-full">
+                  <ShieldCheck className="w-3 h-3" /> CV Document
                 </span>
               </div>
               <p className="text-xs text-slate-400">
@@ -168,7 +168,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
             /* Summary Verification Sheet */
             <div className="max-w-2xl w-full bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
               <div>
-                <h4 className="text-xl font-bold text-white mb-2">Verified Qualifications Summary</h4>
+                <h4 className="text-xl font-bold text-white mb-2">Qualifications Summary</h4>
                 <p className="text-xs text-slate-400">
                   Every detail displayed on this website is authenticated against Hifza Tahir&apos;s CV document.
                 </p>

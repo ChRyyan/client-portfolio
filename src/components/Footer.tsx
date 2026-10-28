@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCV }) => {
               </li>
               <li>
                 <button onClick={() => scrollTo('showcase')} className="hover:text-white transition-colors cursor-pointer">
-                  Analytical Showcase (Demo Data)
+                  Analytical Case Studies
                 </button>
               </li>
               <li>

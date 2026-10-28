@@ -119,9 +119,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenCV }) => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <FileCheck2 className="w-5 h-5 text-[#4F9CF9]" />
-                  <h3 className="text-white font-bold text-base">Verified CV Document</h3>
+                  <h3 className="text-white font-bold text-base">Curriculum Vitae Document</h3>
                 </div>
-                <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2 py-0.5 rounded-full">
+                <span className="text-[11px] font-semibold text-[#67E8F9] bg-slate-800 border border-slate-700 px-2 py-0.5 rounded-full">
                   Source of Truth
                 </span>
               </div>
@@ -153,7 +153,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenCV }) => {
                   className="w-full py-2.5 px-4 rounded-lg bg-[#4F9CF9] hover:bg-[#38BDF8] text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <FileCheck2 className="w-4 h-4" />
-                  <span>Inspect Original CV in Lightbox</span>
+                  <span>View Curriculum Vitae in Lightbox</span>
                 </button>
               </div>
             </div>

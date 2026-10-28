@@ -21,16 +21,16 @@ export const EducationSection: React.FC = () => {
         </div>
 
         {/* Education Timeline */}
-        <div className="relative border-l-2 border-slate-800 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
+        <div className="relative border-l-2 border-slate-800 ml-2 sm:ml-8 pl-4 sm:pl-10 space-y-10 sm:space-y-12">
           {EDUCATION_DATA.map((item, idx) => (
             <div key={item.id} className="relative group">
               {/* Timeline Marker Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-[#4F9CF9] flex items-center justify-center shadow-[0_0_12px_rgba(79,156,249,0.5)] group-hover:scale-110 group-hover:border-[#67E8F9] transition-all">
-                <span className="w-2 h-2 rounded-full bg-[#67E8F9]" />
+              <div className="absolute -left-[25px] sm:-left-[47px] top-1.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-900 border-2 border-[#4F9CF9] flex items-center justify-center shadow-[0_0_12px_rgba(79,156,249,0.5)] group-hover:scale-110 group-hover:border-[#67E8F9] transition-all">
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#67E8F9]" />
               </div>
 
               {/* Education Card */}
-              <div className="glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-slate-800 transition-all">
+              <div className="glass-panel glass-panel-hover rounded-2xl p-5 sm:p-8 border border-slate-800 transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#67E8F9] transition-colors">
